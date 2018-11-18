@@ -1,5 +1,5 @@
 # IDEAExportPlugin
-IntelliJ IDEA插件(编译并导出JavaWEB项目中的文件
+IntelliJ IDEA插件(编译并导出JavaWEB项目中的文件)
 
 使用方式：下载根目录的ExportPlugin.jar文件，打开IDEA安装插件，安装方式选择本地安装，在弹出的窗口选择下载的ExportPlugin.jar文件，安装完成后重启即可使用。
 
