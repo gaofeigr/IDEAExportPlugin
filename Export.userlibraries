@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="T7">
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/el-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/jasper.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/jsp-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/catalina.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/ecj-4.4.2.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/jasper-el.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/catalina-ha.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/servlet-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-dbcp.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-jdbc.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-util.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/catalina-ant.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-coyote.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/websocket-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-i18n-es.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-i18n-fr.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat-i18n-ja.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/annotations-api.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/catalina-tribes.jar" />
+    <archive path="C:/DevelopmentTools/apache-tomcat-7.0.75/lib/tomcat7-websocket.jar" />
+  </library>
+</eclipse-userlibraries>
+

@@ -1,0 +1,58 @@
+<idea-plugin>
+  <id>com.gaofeigr.export</id>
+  <name>ExportFiles</name>
+  <version>1.0</version>
+  <vendor email="gaofeigr@outlook.com" url="https://github.com/gaofeigr">GaoFei</vendor>
+
+  <description><![CDATA[
+      Export java file to class
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <!--<action id="ExportPlugin.ExportFilesAction" class="com.gaofeigr.actions.ExportFilesAction" text="ExportFiles"-->
+            <!--description="Export current java file or folder to class file">-->
+      <!--&lt;!&ndash;<add-to-group group-id="RunContextGroupInner" anchor="last"/>&ndash;&gt;-->
+      <!--<add-to-group group-id="RunContextGroup" anchor="last"/>-->
+    <!--</action>-->
+    <group id="ExportGroup" popup="false">
+      <separator/>
+      <!--global-->
+      <add-to-group group-id="RunContextGroup" anchor="last"/>
+      <separator/>
+      <!--subversion local changes-->
+      <add-to-group group-id="VersionControlsGroup" anchor="last"/>
+      <separator/>
+      <!--subversion repository panel-->
+      <add-to-group group-id="CommittedChangesToolbar" anchor="last"/>
+      <separator/>
+      <!--subversion repository detail info-->
+      <add-to-group group-id="RepositoryChangesBrowserToolbar" anchor="last"/>
+      <separator/>
+    </group>
+    <action id="ExportPlugin.ExportFilesAction" class="com.gaofeigr.actions.ExportFilesAction" text="ExportFiles"
+            description="Compile current java file or folder and export to file">
+      <add-to-group group-id="ExportGroup" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
