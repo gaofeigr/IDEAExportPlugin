@@ -88,7 +88,12 @@ public class CompilerFiles {
         fileManager.setLocation(oLocation, Arrays.asList(new File[] { new File(outPutPath) }));
         try {
             Iterable<? extends JavaFileObject> compilationUnits = fileManager.getJavaFileObjectsFromStrings(javaFilePathList);
-            JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, diagnostics, null, null, compilationUnits);
+            List<String> test = new ArrayList<String>();
+            test.add("-source");
+            test.add("1.6");
+            test.add("-target");
+            test.add("1.6");
+            JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, diagnostics, test, null, compilationUnits);
             if (task.call()) {
                 System.out.println("操作成功！");
             } else {

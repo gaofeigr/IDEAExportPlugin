@@ -5,6 +5,7 @@ import javax.tools.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class MyTest {
@@ -13,11 +14,10 @@ public class MyTest {
     }
 
     public static void test1() throws Exception {
-        String sOutputPath = "D:\\_WORK\\ekp\\src\\com\\landray\\kmss\\sys\\news\\actions\\";
+        String sOutputPath = "";
         List<String> paths = new ArrayList<String>();
         List<String> options = new ArrayList<String>();
-//        paths.add("D:\\IDEAPluginDev\\Export\\src\\com\\gaofeigr\\actions\\ExportFilesAction.java");
-        paths.add("D:\\_WORK\\ekp\\src\\com\\landray\\kmss\\sys\\news\\actions\\SysNewsConfigAction.java");
+        paths.add("");
 //        options.add("-encoding");
 //        options.add("UTF8");
 //        options.add("-verbose");
@@ -32,7 +32,12 @@ public class MyTest {
         fileManager.handleOption("-classpath", options.iterator());
         fileManager.setLocation(oLocation, Arrays.asList(new File[] { new File(sOutputPath) }));
         Iterable<? extends JavaFileObject> compilationUnits = fileManager.getJavaFileObjectsFromStrings(paths);
-        JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, diagnostics, null, null, compilationUnits);
+        List<String> test = new ArrayList<String>();
+        test.add("-source");
+        test.add("1.6");
+        test.add("-target");
+        test.add("1.6");
+        JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, diagnostics, test, null, compilationUnits);
         if (task.call()) {
             System.out.println(true);
         } else {
