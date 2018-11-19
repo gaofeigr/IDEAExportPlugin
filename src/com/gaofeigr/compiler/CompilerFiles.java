@@ -2,19 +2,9 @@ package com.gaofeigr.compiler;
 
 import com.gaofeigr.model.CompilerInfoModel;
 import com.gaofeigr.utils.ArrayUtils;
+import com.gaofeigr.utils.CompilerUtils;
 import com.gaofeigr.utils.FileUtil;
-import com.gaofeigr.utils.StringUtils;
-import com.intellij.conversion.CannotConvertException;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleUtil;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.EnvironmentUtil;
 import org.apache.commons.httpclient.util.DateUtil;
 
 import javax.tools.*;
@@ -76,7 +66,7 @@ public class CompilerFiles {
         DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<JavaFileObject>();
         StandardJavaFileManager fileManager = compiler.getStandardFileManager(diagnostics, null, null);
         fileManager.handleOption("-classpath",
-                Arrays.asList(StringUtils.buildClassPath(compilerInfoModel.getCurrentModuleLibrariesPath())).iterator());
+                Arrays.asList(CompilerUtils.buildClassPath(compilerInfoModel.getCurrentModuleLibrariesPath())).iterator());
         fileManager.handleOption("-encoding",
                 Arrays.asList("UTF8").iterator());
         fileManager.setLocation(StandardLocation.CLASS_OUTPUT,

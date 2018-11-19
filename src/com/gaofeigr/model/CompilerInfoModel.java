@@ -1,7 +1,5 @@
 package com.gaofeigr.model;
 
-import com.gaofeigr.utils.FileUtil;
-import com.gaofeigr.utils.StringUtils;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.module.Module;
@@ -12,7 +10,6 @@ import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.EnvironmentUtil;
-import com.sun.jna.platform.FileUtils;
 
 import java.io.File;
 import java.util.ArrayList;

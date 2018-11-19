@@ -3,12 +3,9 @@ package com.gaofeigr.utils;
 import java.io.File;
 import java.util.List;
 
-/**
- * 常用String操作工具类
- */
-public class StringUtils {
+public class CompilerUtils {
 
-    private StringUtils(){}
+    private CompilerUtils(){}
 
     /**
      * 构建引用的jar包目录
