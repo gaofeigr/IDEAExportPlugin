@@ -18,13 +18,14 @@ public class ExportDialog extends JDialog {
     private JRadioButton CompressRadioButton_no;
     private JRadioButton CompressRadioButton_yes;
 
-    private DataContext file;
+    private DataContext dataContext;
 
-    public void setFile(DataContext file) {
-        this.file = file;
+    public void setFile(DataContext dataContext) {
+        this.dataContext = dataContext;
     }
 
     public ExportDialog() throws IOException {
+        System.out.println();
         inputOutPath.setText(FileSystemView.getFileSystemView().getHomeDirectory().toString());
         setContentPane(contentPane);
         setModal(true);
@@ -79,7 +80,7 @@ public class ExportDialog extends JDialog {
 
     private void onOK() {
         // add your code here
-        new CompilerFiles(file, inputOutPath.getText()).execExport();
+        new CompilerFiles(dataContext, inputOutPath.getText()).execExport();
         dispose();
     }
 
