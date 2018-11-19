@@ -26,6 +26,11 @@ public class ExportDialog extends JDialog {
 
     public ExportDialog() throws IOException {
         System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
         inputOutPath.setText(FileSystemView.getFileSystemView().getHomeDirectory().toString());
         setContentPane(contentPane);
         setModal(true);
