@@ -1,10 +1,14 @@
 package com.gaofeigr.dialogs;
 
 import com.gaofeigr.compiler.CompilerFiles;
+import com.gaofeigr.model.CompilerInfoModel;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
@@ -79,8 +83,12 @@ public class ExportDialog extends JDialog {
 
     private void onOK() {
         // add your code here
-        new CompilerFiles(dataContext, inputOutPath.getText()).execExport();
+        CompilerInfoModel result = new CompilerFiles(dataContext, inputOutPath.getText()).execExport();
         dispose();
+        Messages.showMessageDialog(result.getProject(),
+                String.format("成功导出了%s个文件:\n %s个Java文件\n %s个资源文件\n %s个其他文件(src下的其他文件)", result.getSuccessNum(), result.getSuccessJavaFileNum(), result.getSuccessResourceFileNum(), result.getSuccessOtherFileNum()),
+                "导出结果",
+                Messages.getInformationIcon());
     }
 
     private void onCancel() {

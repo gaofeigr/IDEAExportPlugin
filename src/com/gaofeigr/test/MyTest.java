@@ -1,6 +1,12 @@
 package com.gaofeigr.test;
 
 
+import com.gaofeigr.dialogs.ExportDialog;
+import com.gaofeigr.utils.FileUtil;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.sun.jna.platform.FileUtils;
+
 import javax.tools.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -10,10 +16,31 @@ import java.util.List;
 
 public class MyTest {
     public static void main(String[] args) throws Exception {
-        test1();
+        testDialog1();
     }
 
-    public static void test1() throws Exception {
+    public static void testDialog1() {
+    }
+
+    public static void testDeleteFile() {
+        try {
+            FileUtil.deleteDir(new File("C:\\Users\\gaofe\\Desktop\\新建文件夹\\新建文本文档.txt"));
+
+        } catch (Exception e) {
+            System.err.println("FileUtil.createFile()---------->error");
+            e.toString();
+        }
+    }
+
+    public static void testDialog() throws IOException {
+        ExportDialog dialog = new ExportDialog();
+        dialog.pack();
+        dialog.setTitle("ExportFiles");
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }
+
+    public static void testCompiler() throws Exception {
         String sOutputPath = "";
         List<String> paths = new ArrayList<String>();
         List<String> options = new ArrayList<String>();

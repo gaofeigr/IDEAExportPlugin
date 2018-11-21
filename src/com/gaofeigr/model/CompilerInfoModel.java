@@ -7,9 +7,12 @@ import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.EnvironmentUtil;
+import org.bouncycastle.asn1.cms.EnvelopedData;
+import org.mozilla.javascript.tools.shell.Environment;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -32,9 +35,9 @@ public class CompilerInfoModel {
         this.dataContext = dataContext;
         this.outPutPath = outPutPath;
         this.selectFiles = dataContext.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY);
-        this.currentProjectPath = this.project.getBasePath().replaceAll("/", "\\\\") + File.separator;
+        this.currentProjectPath = this.project.getBasePath().replaceAll("/", "\\\\");
         this.currentSystemSDKVersion = EnvironmentUtil.getValue("PROCESSOR_LEVEL");
-        this.currentProjectSDKVersion = ProjectRootManagerEx.getInstanceEx(this.project).getProjectSdkName();
+        this.currentProjectSDKVersion = ProjectRootManager.getInstance(project).getProjectSdkName();
         if (this.selectFiles != null && this.selectFiles.length > 0) {
             initCurrentModuleLibrariesPath();
         }
@@ -141,6 +144,49 @@ public class CompilerInfoModel {
      * 选中的文件列表
      */
     VirtualFile[] selectFiles;
+
+    /**
+     * 成功导出文件数量
+     */
+    private int successNum;
+
+    private int successJavaFileNum;
+
+    private int successOtherFileNum;
+
+    private int successResourceFileNum;
+
+    public int getSuccessJavaFileNum() {
+        return successJavaFileNum;
+    }
+
+    public void setSuccessJavaFileNum(int successJavaFileNum) {
+        this.successJavaFileNum = successJavaFileNum;
+    }
+
+    public int getSuccessOtherFileNum() {
+        return successOtherFileNum;
+    }
+
+    public void setSuccessOtherFileNum(int successOtherFileNum) {
+        this.successOtherFileNum = successOtherFileNum;
+    }
+
+    public int getSuccessResourceFileNum() {
+        return successResourceFileNum;
+    }
+
+    public void setSuccessResourceFileNum(int successResourceFileNum) {
+        this.successResourceFileNum = successResourceFileNum;
+    }
+
+    public int getSuccessNum() {
+        return successNum;
+    }
+
+    public void setSuccessNum(int successNum) {
+        this.successNum = successNum;
+    }
 
     public VirtualFile[] getSelectFiles() {
         return selectFiles;
