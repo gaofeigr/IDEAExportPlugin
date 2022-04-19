@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MyTest {
     public static void main(String[] args) throws Exception {
-        testDialog1();
+        testDialog();
     }
 
     public static void testDialog1() {

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ExportPlugin.iml" filepath="$PROJECT_DIR$/ExportPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IDEAExportPlugin.iml" filepath="$PROJECT_DIR$/IDEAExportPlugin.iml" />
     </modules>
   </component>
 </project>

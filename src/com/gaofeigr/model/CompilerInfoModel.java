@@ -8,11 +8,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.EnvironmentUtil;
-import org.bouncycastle.asn1.cms.EnvelopedData;
-import org.mozilla.javascript.tools.shell.Environment;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,7 +17,7 @@ import java.util.List;
 
 /**
  * 编译所需基本信息model
- */
+ *///
 public class CompilerInfoModel {
 
     public CompilerInfoModel(DataContext dataContext, String outPutPath) {
